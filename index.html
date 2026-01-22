@@ -179,6 +179,15 @@ footer{
   color:var(--muted);
   border-top:1px solid var(--border);
 }
+#certifications h3 {
+  margin-bottom:50px;
+}
+
+#certifications-list .glass a {
+  display:inline-block;
+  text-decoration:none;
+}
+
 
 @media(max-width:768px){
   nav{flex-direction:column;gap:10px}
@@ -231,6 +240,25 @@ footer{
   </div>
 </section>
 
+<section id="certifications">
+  <h3>Certifications</h3>
+  <div class="skills" id="certifications-list">
+    <!-- Certifications cards go here -->
+    <div class="glass">
+      <h4>PCEP – Certified Entry-Level Python Programmer</h4>
+      <p>Python fundamentals, syntax, and basic programming concepts.</p>
+      <a href="certificates/PCEP_Certificate.pdf" target="_blank" class="btn ghost" style="margin-top:10px;">View Certificate</a>
+    </div>
+    <div class="glass">
+      <h4>Data Science with Python</h4>
+      <p>Data analysis, Pandas, NumPy, and basic ML concepts.</p>
+      <a href="certificates/Data_Science_Certificate.pdf" target="_blank" class="btn ghost" style="margin-top:10px;">View Certificate</a>
+    </div>
+    <!-- Add more certifications similarly -->
+  </div>
+</section>
+
+
 <section id="projects">
   <h3>Featured Projects</h3>
   <div class="projects" id="github-projects">
@@ -264,7 +292,7 @@ particlesJS("particles-js",{
 });
 
 /* GITHUB PROJECTS */
-fetch("https://api.github.com/users/YOUR_GITHUB_USERNAME/repos")
+fetch("https://api.github.com/users/zh-777/repos")
 .then(res=>res.json())
 .then(data=>{
   const container=document.getElementById("github-projects");
