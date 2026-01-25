@@ -8,6 +8,8 @@
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
 <!-- Particles -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -65,6 +67,7 @@ nav a{
   margin-left:28px;
   font-size:14px;
   color:var(--muted);
+  text-decoration: none;
 }
 nav a:hover{color:var(--accent)}
 
@@ -122,6 +125,8 @@ section{
   border-radius:12px;
   font-size:15px;
   transition:.3s;
+  text-decoration: none;
+  color: white;
 }
 
 .primary{
@@ -145,6 +150,39 @@ h3{
   text-align:center;
   margin-bottom:60px;
 }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.skill-card i {
+  font-size: 38px;
+  color: var(--accent);
+}
+
+.skill-card span {
+  font-size: 14px;
+  color: var(--text);
+  letter-spacing: 0.3px;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(34, 211, 238, 0.18);
+}
+
 
 .glass{
   background:var(--glass);
@@ -179,20 +217,328 @@ footer{
   color:var(--muted);
   border-top:1px solid var(--border);
 }
-#certifications h3 {
-  margin-bottom:50px;
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 35px;
 }
 
-#certifications-list .glass a {
-  display:inline-block;
-  text-decoration:none;
+.cert img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
 }
 
+.cert h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.cert p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.verify {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.verify:hover {
+  text-decoration: underline;
+}
+.section-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+/* Projects list */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Project row */
+.project-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 40px;
+  align-items: center;
+  padding: 28px;
+  transition: 0.3s ease;
+}
+
+.project-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(34, 211, 238, 0.15);
+}
+
+/* Thumbnail */
+.project-thumb img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Content */
+.project-content h4 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.project-content p {
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 12px;
+}
+
+/* Skills */
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-skills span {
+  font-size: 13px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--accent);
+}
+
+/* Action */
+.project-action {
+  text-align: right;
+}
+
+.btn-primary {
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  background: var(--accent);
+  color: #000;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-action {
+    text-align: left;
+  }
+}
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-meta {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .project-row::before {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-meta {
+    text-align: left;
+  }
+}
 
 @media(max-width:768px){
   nav{flex-direction:column;gap:10px}
   section{padding:90px 6%}
 }
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    padding: 14px 5%;
+    flex-direction: row;
+  }
+
+  nav h1 {
+    font-size: 18px;
+  }
+
+  nav > div {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 13px;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 6%;
+  }
+
+  h3 {
+    font-size: 26px;
+    margin-bottom: 36px;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 140px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .hero p {
+    font-size: 15px;
+    margin-top: 14px;
+    padding: 0 8px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .skill-card {
+    height: 110px;
+  }
+
+  .skill-card i {
+    font-size: 32px;
+  }
+
+  .skill-card span {
+    font-size: 13px;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cert h4 {
+    font-size: 16px;
+  }
+
+  /* PROJECTS */
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .project-thumb img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .project-content h4 {
+    font-size: 18px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+  }
+
+  .project-action {
+    text-align: left;
+  }
+}
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Mobile navbar behavior */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  nav > div {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 12px;
+  }
+
+  nav > div.show {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+}
+
 </style>
 </head>
 
@@ -208,6 +554,7 @@ footer{
     <a href="#contact">Contact</a>
     <span class="toggle" onclick="toggleTheme()">🌗</span>
   </div>
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
 </nav>
 
 <section class="hero">
@@ -231,40 +578,329 @@ footer{
 </section>
 
 <section id="skills">
-  <h3>Skills</h3>
-  <div class="skills">
-    <div class="glass">Python · C++ · JavaScript</div>
-    <div class="glass">Pandas · NumPy · Scikit-learn</div>
-    <div class="glass">Jupyter · Colab · VS Code</div>
-    <div class="glass">HTML · CSS · JS · Illustrator</div>
+  <h3 class="section-title">Skills</h3>
+
+  <div class="skills-grid">
+      
+    <div class="glass skill-card">
+        <i class="devicon-cplusplus-plain"></i>
+        <span>C++</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-python-plain"></i>
+      <span>Python</span>
+    </div>
+
+
+    <div class="glass skill-card">
+      <i class="devicon-pandas-plain"></i>
+      <span>Pandas</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-numpy-plain"></i>
+      <span>NumPy</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-scikitlearn-plain"></i>
+      <span>Scikit-learn</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-jupyter-plain"></i>
+      <span>Jupyter</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-googlecolab-plain"></i>
+      <span>Colab</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-html5-plain"></i>
+      <span>HTML</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-css3-plain"></i>
+      <span>CSS</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-javascript-plain"></i>
+      <span>JavaScript</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-illustrator-plain"></i>
+      <span>Illustrator</span>
+    </div>
+
+    <div class="glass skill-card">
+      <i class="devicon-photoshop-plain"></i>
+      <span>Photoshop</span>
+    </div>
+
   </div>
 </section>
+
 
 <section id="certifications">
   <h3>Certifications</h3>
-  <div class="skills" id="certifications-list">
-    <!-- Certifications cards go here -->
-    <div class="glass">
-      <h4>PCEP – Certified Entry-Level Python Programmer</h4>
-      <p>Python fundamentals, syntax, and basic programming concepts.</p>
-      <a href="certificates/PCEP_Certificate.pdf" target="_blank" class="btn ghost" style="margin-top:10px;">View Certificate</a>
+
+  <div class="cert-grid">
+    
+    <div class="glass cert">
+      <img src="Certificates\Mod 1.jpeg" alt="Google Data Analyst: MOD 1">
+      <h4>Data Analyst Mod-1</h4>
+      <p>Coursera (Google)</p>
+      <a href="https://coursera.org/share/ec8d5d5d18dc2f81401c88b8469528ad" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
     </div>
-    <div class="glass">
-      <h4>Data Science with Python</h4>
-      <p>Data analysis, Pandas, NumPy, and basic ML concepts.</p>
-      <a href="certificates/Data_Science_Certificate.pdf" target="_blank" class="btn ghost" style="margin-top:10px;">View Certificate</a>
+
+    <div class="glass cert">
+      <img src="Certificates\Mod 2.jpeg" alt="Google Data Analyst: MOD 2">
+      <h4>Data Analyst Mod-2</h4>
+      <p>Coursera (Google)</p>
+      <a href="https://coursera.org/share/6e85071dc52d1e4159fb223339cc96ac" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
     </div>
-    <!-- Add more certifications similarly -->
+
+    <div class="glass cert">
+      <img src="Certificates\Mod 3.jpeg" alt="Google Data Analyst: MOD 3">
+      <h4>Data Analyst Mod-3</h4>
+      <p>Coursera (Google)</p>
+      <a href="https://coursera.org/share/155d144febd8713379db3ba247d8cf25" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+
+    <div class="glass cert">
+      <img src="Certificates\python_ds.jpg" alt="Python(Data Science)from Udemy">
+      <h4>Python for Data Science</h4>
+      <p>UDEMY</p>
+      <a href="https://www.udemy.com/certificate/UC-7fa35020-c391-4013-9db7-5647a2715e83/" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+
+    <div class="glass cert">
+      <img src="Certificates\Python_handson.jpg" alt="Python Tasks">
+      <h4>Python Handson Tasks</h4>
+      <p>UDEMY</p>
+      <a href="https://www.udemy.com/certificate/UC-1c5711c0-833d-4427-954a-3b0184a37ae4/" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+
+    <div class="glass cert">
+      <img src="Certificates\Python_R.jpg" alt="Programming with Python & R">
+      <h4>Programming with Python & R</h4>
+      <p>UDEMY</p>
+      <a href="https://www.udemy.com/certificate/UC-1a224fd6-b611-4c77-8324-afcecc632cf9/" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>    
+    <div class="glass cert">
+      <img src="Certificates\Canva_ai.jpg" alt="Canva_AI Certificate">
+      <h4>Smarter Desgining with Canva AI</h4>
+      <p>UDEMY</p>
+      <a href="https://www.udemy.com/certificate/UC-342ac46e-81c3-41ea-9798-9d25dfb86db5/" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+
+    <div class="glass cert">
+      <img src="Certificates\graphic_ai.jpg" alt="GD with AI">
+      <h4>Graphic Desgining with AI</h4>
+      <p>UDEMY</p>
+      <a href="https://www.udemy.com/certificate/UC-52ef7952-2107-4444-a21a-51582ed7b3ff/" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+    <div class="glass cert">
+      <img src="Certificates\CB.jpeg" alt="Python Crash Course">
+      <h4>Python Crash Course</h4>
+      <p>CodeBettle</p>
+      <a href="https://drive.google.com/drive/folders/1hTUwzh36SydzEGN38ZV3ubWbpOXw_Edi" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
+    <div class="glass cert">
+      <img src="Certificates\Python Pearson.jpg" alt="GD with AI">
+      <h4>Advanced Python </h4>
+      <p>Certiport|CertNexus|Persona</p>
+      <a href="https://drive.google.com/file/d/1ohdXcBdVaBMIUeZ60ApCM2XxLS-LSVCs/view?usp=sharing" target="_blank" class="verify">
+        View Certificate →
+      </a>
+    </div>
+    <div class="glass cert">
+      <img src="Certificates\Zohaib Hassan.png" alt="Machine Learning Course">
+      <h4>Machine Learning Course</h4>
+      <p>Nexus AI</p>
+      <a href="https://drive.google.com/drive/folders/1Mi1o4S8w9XpiRvehYJ4WG8EcHTPj3OMF" target="_blank" class="verify">
+        Verify Certificate →
+      </a>
+    </div>
   </div>
 </section>
-
 
 <section id="projects">
-  <h3>Featured Projects</h3>
-  <div class="projects" id="github-projects">
-    <!-- GitHub projects auto load here -->
+  <h3 class="section-title">Projects</h3>
+
+  <div class="projects-list">
+
+    <!-- Project 1 -->
+    <div class="glass project-row">
+      <div class="project-thumb">
+        <img src="Images\Bank_Marketing.png" alt="Bank_Marketing">
+      </div>
+
+      <div class="project-content">
+        <h4>Bank Marketing</h4>
+        <p>
+          Term deposit subscription prediction using Python and machine learning techniques on bank marketing data.
+        </p>
+
+        <div class="project-skills">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Matplotlib</span>
+          <span>Scikit-learn</span>
+        </div>
+      </div>
+
+      <div class="project-action">
+        <a href="https://github.com/zh-777/Pytho_Data_Science/tree/main/Bank_Marketing"
+           target="_blank"
+           class="btn-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="glass project-row">
+      <div class="project-thumb">
+        <img src="Images\Mobile_info.png" alt="Mobile_Info_Site">
+      </div>
+
+      <div class="project-content">
+        <h4>Mobile Info Site</h4>
+        <p>
+          A modern mobile information website featuring latest phones, prices, specifications, and upcoming launches in one place.
+        </p>
+
+        <div class="project-skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
+      </div>
+
+      <div class="project-action">
+        <a href="https://github.com/zh-777/Web_Dev/tree/main/Mobile_info"
+           target="_blank"
+           class="btn-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="glass project-row">
+      <div class="project-thumb">
+        <img src="Images\CS.png" alt="customer_segmentation">
+      </div>
+
+      <div class="project-content">
+        <h4>Customer Segmentation Model</h4>
+        <p>
+          A customer segmentation project using Python and clustering techniques for targeted marketing.
+        </p>
+
+        <div class="project-skills">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Matplotlib</span>
+          <span>Seaborn</span>
+          <span>Scikit-learn</span>
+        </div>
+      </div>
+
+      <div class="project-action">
+        <a href="https://github.com/zh-777/Pytho_Data_Science/tree/main/Customer_Segmentation"
+           target="_blank"
+           class="btn-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="glass project-row">
+      <div class="project-thumb">
+        <img src="Images\Blog.png" alt="Pet_lovers_site">
+      </div>
+
+      <div class="project-content">
+        <h4>Pet Lovers Blog</h4>
+        <p>
+          A friendly blog for pet lovers featuring care tips, training guides, and heart-warming pet stories.
+        </p>
+
+        <div class="project-skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+        </div>
+      </div>
+
+      <div class="project-action">
+        <a href="https://github.com/zh-777/Web_Dev/tree/main/Blog_Site"
+           target="_blank"
+           class="btn-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- More Project -->
+    <div class="glass project-row">
+      <div class="project-thumb">
+        <img src="Images\More.png" alt="More_porjects">
+      </div>
+
+      <div class="project-content">
+        <h4>More Projects</h4>
+
+        <div class="project-skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Matplotlib</span>
+          <span>Seaborn</span>
+          <span>Scikit-learn</span>
+        </div>
+      </div>
+
+      <div class="project-action">
+        <a href="https://github.com/zh-777"
+           target="_blank"
+           class="btn-primary">
+          View on GitHub
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section id="contact" class="contact">
   <h3>Contact</h3>
@@ -283,7 +919,7 @@ function toggleTheme(){
 /* PARTICLES */
 particlesJS("particles-js",{
   particles:{
-    number:{value:60},
+    number:{value:50},
     color:{value:"#22d3ee"},
     opacity:{value:.4},
     size:{value:2},
@@ -305,7 +941,39 @@ fetch("https://api.github.com/users/zh-777/repos")
       </div>`;
   });
 });
+/* Reveal animation */
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+reveals.forEach(r => observer.observe(r));
+
+/* Filter */
+function filterProjects(type) {
+  const projects = document.querySelectorAll('.project-row');
+  const buttons = document.querySelectorAll('.project-filters button');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  projects.forEach(p => {
+    if (type === 'all' || p.classList.contains(type)) {
+      p.style.display = 'flex';
+    } else {
+      p.style.display = 'none';
+    }
+  });
+}
+function toggleMenu() {
+  document.querySelector("nav > div").classList.toggle("show");
+}
+
 </script>
+
 
 </body>
 </html>
